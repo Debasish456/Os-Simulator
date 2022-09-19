@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OS Homepage</title>
+	<meta name="author" content="Pavan" />
+	<meta name="description" content="OS Project index page" />
+	<meta name="keywords"  content="Scheduling,Bankers,OS" />
+	<meta name="Resource-type" content="Document" />
+	<link rel="stylesheet" type="text/css" href={% static "ls/jquery.fullPage.css" %}/>
+	<link rel="stylesheet" type="text/css" href={% static "ls/index.css" %}/>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src={% static "js/scrolloverflow.js" %}></script>
+
+	<script type="text/javascript" src={% static "js/jquery.fullPage.js" %}></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['rgb(243, 106, 255)', 'rgb(200, 255, 151)', 'rgb(119, 112, 255)', '#4ecdc4', '#a4bfeb', '#c5e0d8', '#91bab3' , '#f0ebd8' , '#c5e0d8','#c5e0d8'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage' , '8thpage' ,'9thpage','10thpage'],
+				menu: '#menu',
+				easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)'
+			});
+		});
+	</script>
+</head>
+<body>
+
+<ul id="menu">
+	<li data-menuanchor="firstPage"><a href="#firstPage">Home</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">Process Scheduling</a></li>
+	<li data-menuanchor="3rdPage"><a href="#3rdPage">Banker's</a></li>
+	<li data-menuanchor="4thpage"><a href="#4thpage">Secondary Storage</a></li>
+	<li data-menuanchor="5thpage"><a href="#5thpage">Process Sync</a></li>
+	{% comment %} <li data-menuanchor="6thpage"><a href="#6thpage">Memory</a></li> {% endcomment %}
+	{% comment %} <li data-menuanchor="7thpage"><a href="#7thpage">Sockets</a></li> {% endcomment %}
+	<li data-menuanchor="8thpage"><a href="#8thpage">Files</a></li>
+	{% comment %} <li data-menuanchor="9thpage"><a href="#9thpage">Security</a></li>
+	<li data-menuanchor="10thpage"><a href="#10thpage">Paging</a></li> {% endcomment %}
+</ul>
+<div style="background-color: rgb(119, 112, 255);"></div>
+<div id="fullpage">
+	<div class="section " id="section0">
+		<h1>Operating System Simulator</h1>
+		<br>
+		<br>
+		<br>
+		<h2 style="font-size: 40px;">Project By: </h2>
+		<h2 style="font-size: 40px;">Debasish Mahapatra</h2>
+		<br>
+		<h2>Student of Silicon Institute of Technology</h2>
+		<h2>Branch: CSE </h2>
+	</div>
+	<div class="section" id="section1">
+		<div class="intro">
+			<div class="row">
+				<div class="column1">
+					<h1><a href={% url "index1" %}>Process Scheduling</a></h1>
+				</div>
+				<div class="column1">
+					 <ul id="scheduling-style">
+  					   <li><a href={% url "sjf" %}>Shortest Job First</a></li>
+					   <li><a href={% url "fcfs" %}>First Come First Served</a></li>
+					   <!-- <li><a href="../Process Scheduling/index.html">Multilevel Queue</a></li> -->
+					   <li><a href={% url "rr" %}>Round Robin</a></li>
+					   <li><a href={% url "priority" %}>Priority Scheduling</a></li>
+					 </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section2">
+		<div class="intro">
+			<h1><a href={% url "index2" %}>Banker's Algorithm</a></h1>
+			<p>Banker's Algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation of predetermined maximum possible amounts of all resources, and then makes an "safe-state" check to test for possible deadlock conditions for all other pending activities, before deciding whether allocation should be allowed to continue.</p>
+		</div>
+	</div>
+	<div class="section" id="section3">
+		<div class="intro">
+			<div class="row">
+				<div class="column1">
+					<h1>Secondary Storage</h1>
+				</div>
+				<div class="column1">
+					 <ul id="d-scheduling-style">
+  					   <li><a href="../Disk/disk.html">1-Disk Scheduling</a></li>
+					   {% comment %} <li><a href="../Disk/lba.html">2-LBA</a></li> {% endcomment %}
+					 </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section5">
+		<div class="intro">
+			<div class="row">
+				<div class="column2">
+					<h1>Process Synchronization</h1>
+				</div>
+				<div class="column2">
+					 <ul id="synchronization-style">
+  					   {% comment %} <li><a href="../Process synchronization/cigarette_smokers.html">Cigarette Smokers</a></li> {% endcomment %}
+					   <li><a href="../Process synchronization/dining.html">Dining Philosophers</a></li>
+					   <li><a href="../Process synchronization/producer_consumer.html">Producer Consumer</a></li>
+					   <li><a href="../Process synchronization/readerWriter.html">Reader Writer</a></li>
+					   {% comment %} <li><a href="../Process synchronization/sleepingBarber.html">Sleeping Barber</a></li> {% endcomment %}
+					 </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% comment %} <div class="section" id="section6">
+		<div class="intro">
+			<div class="row">
+				<div class="column1">
+					<h1>Memory Management</h1>
+				</div>
+				<div class="column1">
+					 <ul id="d-scheduling-style">
+  					   <li><a href="../MFT/index.html">MFT</a></li>
+					   <li><a href="../MVT/index.html">MVT</a></li>
+					 </ul>
+				</div>
+			</div>
+		</div>
+	</div> {% endcomment %}
+	{% comment %} <div class="section" id="section7">
+		<div class="intro">
+			<h1><a href="../Sockets/index.html">Sockets</h1>
+			<p>A network socket is one endpoint in a communication flow between two programs running over the network. Socket programming allows processes to create logical sockets that communicate according to a predefined protocol over the network.</p>
+		</div>
+	</div> {% endcomment %}
+	<div class="section" id="section8">
+		<div class="intro">
+			<h1><a href="../File_System/index.html">File Management</h1>
+			<p>File system represents data from a logical view point. The different directory structures for file systems covered here are single-level, two-level and tree-structured directory.</p>
+		</div>
+	</div>
+	{% comment %} <div class="section" id="section9">
+		<div class="intro">
+			<h1><a href="../Login/Authentication/index.html">Time-Based OTP</h1>
+			<p>TOTP is two-factor authentication based on HMAC which combines a secret key with the current timestamp using a cryptographic hash function to generate a one-time password.</p>
+		</div>
+	</div>
+	<div class="section" id="section10">
+		<div class="intro">
+			<h1><a href="../PageReplacement/pgtable.html">Paging and Page Table</h1>
+			<p>Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.</p>
+		</div>
+	</div> {% endcomment %}
+	<!-- <div class="section" id="section8">
+		<div class="intro">
+			<h1><a href="about.html">Meet the Developers</h1>
+		</div>
+	</div> -->
+</div>
+</body>
+</html>
